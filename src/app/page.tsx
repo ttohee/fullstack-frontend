@@ -1,10 +1,12 @@
-import Image from "next/image";
-import Clicker from "./Clicker";
+import { login } from '@/api/auth';
+import Clicker from './Clicker';
 
-export default function Home() {
+export default async function Home() {
+  const response = await login('asdf', 'asdf').catch(console.error);
+  console.log(response);
+
   return (
     <>
-      <p>hello world!</p>
       <Clicker />
     </>
   );
